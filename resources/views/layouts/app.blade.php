@@ -8,7 +8,7 @@
 
     </head>
     <body class="antialiased">
-        @include('inc.navbar')
+        @include('inc.navbar') <! it is used to include any blade template from the inc folder ->
         <div class="container">
             @yield('content')
         </div>
