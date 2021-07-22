@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PagesController;
+use App\Http\Controllers\PostsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,6 +30,6 @@ Route::get('/users/{id}/{name}', function ($id, $name) {
 Route::get('/', [PagesController::class, 'index']);
 Route::get('/about', [PagesController::class, 'about']);
 Route::get('/services', [PagesController::class, 'services']);
-Route::resource('posts', 'PostsController');
+Route::resources(['posts' => PostsController::class]);
 
 
