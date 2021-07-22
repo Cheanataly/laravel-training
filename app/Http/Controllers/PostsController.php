@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Post;
+use DB;
 
 class PostsController extends Controller
 {
@@ -14,7 +15,14 @@ class PostsController extends Controller
      */
     public function index()
     {
-        $posts = Post::all();
+        //$posts = Post::all(); Eloquent
+        //return Post::where('title', 'Post Two')->get(); return specified post
+        //$posts = DB::select('SELECT * from Posts'); SQL query
+
+        //$posts = Post::orderBy('title', 'desc')->take(1)->get(); limit the number of the post
+        //$posts = Post::orderBy('title', 'desc')->get();
+
+        $posts = Post::orderBy('title', 'desc')->paginate(10); // If the posts exceeds the 10 posts, it will create a new pages
         return view('posts.index')->with('posts', $posts);
     }
 
@@ -47,7 +55,8 @@ class PostsController extends Controller
      */
     public function show($id)
     {
-        //
+        $post = Post::find($id); //Eloquent 
+        return view('posts.show')->with('post', $post);
     }
 
     /**
