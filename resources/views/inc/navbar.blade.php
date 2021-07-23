@@ -19,6 +19,9 @@
             <a class="nav-link text-light" href="/posts">Blog</a>
           </li>
         </ul>
+        <ul class="nav navbar-nav ml-auto">
+          <li><a href="/posts/create" class="text-light">Create Post</a></li>
+        </ul>
       </div>
     </div>
 </nav>
