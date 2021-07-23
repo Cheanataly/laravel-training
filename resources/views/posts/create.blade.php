@@ -9,12 +9,17 @@
         </div>
         <div class="form-group">
             {{Form::label('body', 'Body')}}
-            {{Form::textarea('body', '', ['id'=> 'editor', 'class' => 'form-control', 'placeholder' => 'Body Text'])}}
+            {{Form::textarea('body', '', ['id'=> 'editor', 'class' => 'form-control ck-editor__editable', 'placeholder' => 'Body Text'])}}
         </div>
         {{Form::submit('Submit', ['class'=>'btn btn-primary'])}}
     {!! Form::close() !!}
 @endsection
 @section('ckeditor')
+    <style>
+        .ck-editor__editable {
+            min-height: 200px;
+        }
+    </style>
     <script>
         ClassicEditor
             .create( document.querySelector( '#editor' ) )
