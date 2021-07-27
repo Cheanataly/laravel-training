@@ -42,6 +42,8 @@ class User extends Authenticatable
     ];
 
     public function posts(){
+        // have relationship with post (1->many) relationship
+        // 1 user can have many posts
         return $this->hasMany('App\Models\Post');
     }
 }

@@ -8,7 +8,7 @@ class PagesController extends Controller
 {
     public function index() {
         $title = 'Welcome To Laravel';
-        //return view('pages.index', compact('title'));
+        //return view('pages.index', compact('title')); work same as the following
         return view('pages.index')->with('title', $title);
     }
     public function about() {
